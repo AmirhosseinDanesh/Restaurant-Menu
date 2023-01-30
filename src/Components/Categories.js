@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 
-const Categories = ({categories}) => {
-  
+const Categories = ({categories,filterMenu }) => {
+
+  const [mainCategory , setMaincategory] = useState("all")
+
   return (
     <div className="btn-container">
 
       {
-        categories.map((category)=>(
-          <button type="button" className="filter-btn">
+        categories.map((category, index)=>(
+          <button key={index} type="button" className={
+            category === mainCategory ? "filter-btn highlight" : "filter-btn"
+          }
+          onClick={()=>{
+            setMaincategory(category)
+
+          }}>
           {category}
         </button>
         ))
