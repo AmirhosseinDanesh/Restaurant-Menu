@@ -14,7 +14,7 @@ const Categories = ({categories,filterMenu }) => {
           }
           onClick={()=>{
             setMaincategory(category)
-
+            filterMenu(category)
           }}>
           {category}
         </button>
