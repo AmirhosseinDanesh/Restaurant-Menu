@@ -3,7 +3,9 @@
 Variables
 ===============
 */
-
+html {
+  direction: rtl;
+}
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(205, 86%, 17%);
@@ -59,9 +61,19 @@ Global Styles
   padding: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: IRANSans;
+  src: url("./fonts/IRANSans.ttf");
+}
+@font-face {
+  font-family: IRANSansBold;
+  src: url("./fonts/IRANSansBold.ttf");
+}
+@font-face {
+  font-family: IRANSansLight;
+  src: url("./fonts/IRANSansLight.ttf");
+}
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
@@ -93,6 +105,9 @@ h3 {
 }
 h4 {
   font-size: 0.875rem;
+}
+h5 {
+  font-size: 0.5rem;
 }
 p {
   margin-bottom: 1.25rem;
@@ -148,6 +163,7 @@ Menu
 .title {
   text-align: center;
   margin-bottom: 2rem;
+  font-family: IRANSansBold;
 }
 .underline {
   width: 5rem;
@@ -173,6 +189,7 @@ Menu
   cursor: pointer;
   transition: var(--transition);
   border-radius: var(--radius);
+  font-family: IRANSansLight;
 }
 .filter-btn:hover {
   background: var(--clr-gold);
@@ -209,6 +226,7 @@ Menu
   display: flex;
   justify-content: space-between;
   border-bottom: 0.5px dotted var(--clr-grey-5);
+  font-family: IRANSansBold;
 }
 .item-info h4 {
   margin-bottom: 0.5rem;
@@ -219,6 +237,11 @@ Menu
 .item-text {
   margin-bottom: 0;
   padding-top: 1rem;
+  font-family: IRANSansLight;
+}
+.toman {
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
 }
 
 @media screen and (min-width: 768px) {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Categories = ({categories,filterMenu }) => {
 
-  const [mainCategory , setMaincategory] = useState("all")
+  const [mainCategory , setMaincategory] = useState("همه")
 
   return (
     <div className="btn-container">

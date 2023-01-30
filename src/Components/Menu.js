@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Menu = ({ allMenus }) => {
+
+  useEffect(() => {
+    let prices = document.querySelectorAll(".price");
+    prices.forEach((price) => {
+      price.innerHTML = price.innerHTML.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    })
+  })
+
 
 
   return (
@@ -15,7 +23,13 @@ const Menu = ({ allMenus }) => {
             <div className="item-info">
               <header>
                 <h4>{menu.title}</h4>
-                <h4 className="price">{menu.price}$</h4>
+
+                <h4 className="price">
+                  {menu.price}  
+                  <span className="toman">
+                      تومان  
+                  </span>
+                </h4>
               </header>
               <p className="item-text">{menu.desc}</p>
             </div>
