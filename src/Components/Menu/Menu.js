@@ -28,7 +28,7 @@ const Menu = ({ allMenus }) => {
               <div className="prsc-title">{pr.title}</div>
               <div className="prsc-desc">lorem</div>
               <div className="prsc-price">
-                <div className="prsc-price__number">{pr.price}</div>
+                <div className="prsc-price__number">{pr.price.toLocaleString()}</div>
                 <div className="prsc-price__toman">تومان</div>
               </div>
             </div>
