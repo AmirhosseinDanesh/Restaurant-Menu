@@ -1,0 +1,62 @@
+.product-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 30px;
+  position: relative;
+  padding: 10px;
+  background-color: #fff;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+
+.product-section::before {
+  content: "";
+  border-radius: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  background-color: #ffc222;
+  opacity: 0.1;
+}
+.prsc-info {
+  display: flex;
+  flex-direction: column;
+}
+.prsc-title {
+  font-family: IRANSansBold;
+}
+.prsc-desc {
+  margin: 12px 0;
+  color: #808080;
+  line-height: 1.8;
+  font-size: 0.7rem;
+}
+.prsc-price {
+  display: flex;
+  color: #ffc222;
+  font-weight: 700;
+  font-size: 0.8rem;
+
+}
+.pr-img {
+  width: 150px !important;
+}
+
+@media only screen and (min-width: 900px) {
+  .pr-img {
+    width: 200px !important;
+  }
+  .prsc-title {
+    font-size: 1.5rem;
+  }
+  .prsc-desc, .prsc-price{
+    font-size: 0.9rem;
+  }
+  .product-section{
+    padding: 1.5rem;
+  }
+}

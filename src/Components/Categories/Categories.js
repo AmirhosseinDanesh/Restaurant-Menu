@@ -1,16 +1,17 @@
 import React, { useState } from "react";
+import "./Categories.css"
 
 const Categories = ({categories,filterMenu }) => {
 
   const [mainCategory , setMaincategory] = useState("همه")
 
   return (
-    <div className="btn-container">
+    <div className="Allcatbtn d-flex flex-wrap justify-content-center my-5 px-2">
 
       {
         categories.map((category, index)=>(
           <button key={index} type="button" className={
-            category === mainCategory ? "filter-btn highlight" : "filter-btn"
+            category === mainCategory ? "btn catbtn  highlight" : "btn catbtn"
           }
           onClick={()=>{
             setMaincategory(category)

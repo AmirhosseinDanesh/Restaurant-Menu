@@ -1,0 +1,20 @@
+.catbtn {
+  border-color: #ffc222 !important ;
+  font-size: 0.8rem !important;
+  font-weight: bold !important ;
+  color: #1e1d23 !important ;
+  border: 1px solid #ededed;
+  border-radius: 28px !important;
+  padding: 0.5rem 1.2rem;
+  margin: 0.3rem;
+}
+.catbtn.highlight {
+  background-color: #ffc222 !important;
+  border-color: #ffc222 !important;
+}
+
+@media only screen and (min-width: 900px) {
+    .catbtn{
+        padding: 20px 45px 20px 45px;
+    }
+}

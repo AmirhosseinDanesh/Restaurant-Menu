@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import menus from "./data"
-import Categories from "./Components/Categories"
-import Menu from './Components/Menu';
+import Categories from "./Components/Categories/Categories"
+import Menu from './Components/Menu/Menu';
+import './App.css'
 
 const allCategories = ["همه", ...new Set(menus.map(menu => menu.category))]
 
@@ -26,12 +27,11 @@ function App() {
 
 
   return (
-    <main>
+    <main className='container w-100'>
+      <div className="title text-center pt-5 ">
+        <h1 className=''>رستوران جنیدی</h1>
+      </div>
       <section className="menu section">
-        <div className="title">
-          <h2>منو غذاها</h2>
-          <div className="underline"></div>
-        </div>
         <Categories categories={categories} filterMenu={filterMenu} />
         <Menu allMenus={allMenus} />
       </section>
