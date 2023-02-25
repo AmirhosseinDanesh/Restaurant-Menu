@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import menus from "./data"
+import {menus} from "./data"
 import Categories from "./Components/Categories/Categories"
 import Menu from './Components/Menu/Menu';
 import './App.css'
