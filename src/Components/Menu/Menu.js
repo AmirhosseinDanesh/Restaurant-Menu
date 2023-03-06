@@ -10,7 +10,10 @@ const Menu = ({ allMenus }) => {
     
     fetch(`${Data.url}/courses/category/${categoryName}`)
       .then(res => res.json())
-      .then(data =>setAllProducts(data))
+      .then(data =>{
+        setAllProducts(data)
+        console.log(data[0].cover)
+      })
   },[categoryName])
 
   return (
