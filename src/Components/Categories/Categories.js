@@ -1,24 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Categories.css"
+import { Data } from "../../data";
+import { NavLink } from "react-router-dom";
 
-const Categories = ({categories,filterMenu }) => {
+const Categories = () => {
 
-  const [mainCategory , setMaincategory] = useState("همه")
+  const [allMenu, setAllMenu] = useState([])
+  useEffect(() => {
+    fetch(`${Data.url}/menus`)
+      .then(res => res.json())
+      .then(data => setAllMenu(data))
+  }, [])
 
   return (
     <div className="Allcatbtn d-flex flex-wrap justify-content-center my-5 px-2">
-
+      <NavLink to="/" className={({ isActive }) => (isActive ? 'btn catbtn highlight' : 'btn catbtn')}>
+        همه
+      </NavLink>
       {
-        categories.map((category, index)=>(
-          <button key={index} type="button" className={
-            category === mainCategory ? "btn catbtn  highlight" : "btn catbtn"
-          }
-          onClick={()=>{
-            setMaincategory(category)
-            filterMenu(category)
-          }}>
-          {category}
-        </button>
+        allMenu.map((ct) => (
+          <NavLink key={ct._id} to={`/${ct.href}`} className={({ isActive }) => (isActive ? 'btn catbtn highlight' : 'btn catbtn')}>
+            {ct.title}
+          </NavLink>
         ))
       }
 

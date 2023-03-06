@@ -1,21 +1,17 @@
-import React, { useEffect, useState } from "react";
-import "./Menu.css"
-import { Data } from "../../data";
-import { useParams } from "react-router-dom";
-const Menu = ({ allMenus }) => {
-  const [allProducts, setAllProducts] = useState([])
-  const {categoryName} = useParams()
-  
-  useEffect(() => {
-    
-    fetch(`${Data.url}/courses/category/${categoryName}`)
-      .then(res => res.json())
-      .then(data =>setAllProducts(data))
-  },[categoryName])
+import React, { useEffect, useState } from 'react'
+import { Data } from '../../data'
 
+export default function Index() {
+  const [allCourses, setAllCourses] = useState([])
+
+  useEffect(() => {
+    fetch(`${Data.url}/courses`)
+      .then(res => res.json())
+      .then(data => setAllCourses(data))
+  }, [])
   return (
     <div className="section-center d-flex flex-row flex-wrap align-items-center justify-content-around">
-      {allProducts.map(pr => {
+      {allCourses.map(pr => {
         return (
           <div key={pr._id} className="product-section col-12 col-md-5 align-items-center ">
             <div className="prsc-img col-5 col-md-5 ">
@@ -33,14 +29,6 @@ const Menu = ({ allMenus }) => {
         )
 
       })}
-
-
-
-
     </div>
-
-  );
-
-};
-
-export default Menu;
+  )
+}
