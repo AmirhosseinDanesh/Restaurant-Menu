@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Data } from '../../data'
+import { Data } from '../../Data/Data'
 
 export default function Index() {
   const [allCourses, setAllCourses] = useState([])

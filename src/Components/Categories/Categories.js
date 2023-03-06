@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Categories.css"
-import { Data } from "../../data";
+import { Data } from "../../Data/Data";
 import { NavLink } from "react-router-dom";
 
 const Categories = () => {

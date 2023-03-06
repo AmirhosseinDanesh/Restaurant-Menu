@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Menu.css"
-import { Data } from "../../data";
+import { Data } from "../../Data/Data"
 import { useParams } from "react-router-dom";
 const Menu = ({ allMenus }) => {
   const [allProducts, setAllProducts] = useState([])
