@@ -1,30 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Categories.css"
-import { Data } from "../../Data/Data";
-import { NavLink } from "react-router-dom";
 
-const Categories = () => {
+const Categories = ({ allCategory, filterCategory ,resetFilter }) => {
 
-  const [allMenu, setAllMenu] = useState([])
-  useEffect(() => {
-    fetch(`${Data.url}/menus`)
-      .then(res => res.json())
-      .then(data => setAllMenu(data))
-  }, [])
+  const [mainCategory, setMaincategory] = useState(null);
 
   return (
     <div className="Allcatbtn d-flex flex-wrap justify-content-center my-5 px-2">
-      <NavLink to="/" className={({ isActive }) => (isActive ? 'btn catbtn highlight' : 'btn catbtn')}>
+      <button
+        type="button"
+        className={mainCategory === null ? "btn catbtn highlight" : "btn catbtn"}
+        onClick={() => {
+          setMaincategory(null);
+          resetFilter();
+        }}
+      >
         همه
-      </NavLink>
+      </button>
       {
-        allMenu.map((ct) => (
-          <NavLink key={ct._id} to={`/${ct.href}`} className={({ isActive }) => (isActive ? 'btn catbtn highlight' : 'btn catbtn')}>
-            {ct.title}
-          </NavLink>
+        allCategory.map((category, index) => (
+          <button key={index} type="button" className={
+            category === mainCategory ? "btn catbtn highlight" : "btn catbtn"
+          }
+            onClick={() => {
+              setMaincategory(category)
+              filterCategory(category.title)
+
+            }}>
+            {category.title}
+          </button>
         ))
       }
-
     </div>
   );
 };
