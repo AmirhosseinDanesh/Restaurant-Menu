@@ -45,6 +45,9 @@
 .pr-img {
   width: 150px !important;
 }
+.prsc-price__toman{
+  margin-right: 0.3rem;
+}
 
 @media only screen and (min-width: 900px) {
   .pr-img {
