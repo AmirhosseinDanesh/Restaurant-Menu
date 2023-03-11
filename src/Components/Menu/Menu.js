@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./Menu.css"
 import { Data } from "../../Data/Data"
 const Menu = ({ allProducts }) => {
+  const sortedProducts = (allProducts.sort((a, b) => a.shortName - b.shortName))
+
   return (
 
     <div className="section-center d-flex flex-row flex-wrap align-items-center justify-content-around">
 
       {
-        allProducts.map(pr => {
+        sortedProducts.map(pr => {
           return (
             <div key={pr._id} className="product-section col-12 col-md-5 align-items-center ">
               <div className="prsc-img col-5 col-md-5 ">
