@@ -22,6 +22,13 @@ const Menu = ({ allProducts }) => {
                   <div className="prsc-price__number">{pr.price.toLocaleString()} </div>
                   <div className="prsc-price__toman"> تومان </div>
                 </div>
+                <div className="prsc-stk">
+                  <span className="prsc-stk-text">
+                    {
+                      pr.status === "presell" ? ("تمام شد") : ("")
+                    }
+                  </span>
+                </div>
               </div>
             </div>
           )

@@ -48,7 +48,16 @@
 .prsc-price__toman{
   margin-right: 0.3rem;
 }
-
+.prsc-stk{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: end;
+}
+.prsc-stk-text{
+  color: red;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 @media only screen and (min-width: 900px) {
   .pr-img {
     width: 200px !important;
