@@ -7,7 +7,6 @@ const Menu = ({ allProducts }) => {
   return (
 
     <div className="section-center d-flex flex-row flex-wrap align-items-center justify-content-around">
-
       {
         sortedProducts.map(pr => {
           return (
@@ -25,7 +24,7 @@ const Menu = ({ allProducts }) => {
                 <div className="prsc-stk">
                   <span className="prsc-stk-text">
                     {
-                      pr.status === "presell" ? ("تمام شد") : ("")
+                      pr.status === "presell" ? ("تمام شد") : (" ")
                     }
                   </span>
                 </div>
