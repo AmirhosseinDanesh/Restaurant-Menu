@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   const filterCategory = (category) => {
-    let filteringCategory = allProducts.filter(pr => pr.categoryID === category);
+    let filteringCategory = allProducts.filter(pr => pr.categoryID.title === category);
     setFilterProducts(filteringCategory);
   }
   const resetFilter = () => {
@@ -43,7 +43,8 @@ function App() {
           allCategory={allCategories}
           filterCategory={filterCategory}
           resetFilter={resetFilter} // pass resetFilter as prop
-        />        <Menu allProducts={filterProducts} />
+        />
+        <Menu allProducts={filterProducts} />
       </section>
     </main>
   );
